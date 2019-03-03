@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# cors global config
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST  = (
+    'localhost:8081' # actualliy the HOST of the VUE app
+)
 
 # Application definition
 
@@ -40,7 +45,9 @@ INSTALLED_APPS = [
     # registering app books
     'book',
     # registering rest framework
-    'rest_framework'
+    'rest_framework',
+    # disabling cors
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # cors middleware
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'project.urls'
