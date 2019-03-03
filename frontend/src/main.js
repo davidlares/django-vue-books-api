@@ -4,7 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// importing bootstrap-vue
+import BootstrapVue from 'bootstrap-vue'
+
 Vue.config.productionTip = false
+
+// bootstrap CSS libraries
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// specifying that Vue will use BootstrapVue
+Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */
 new Vue({
